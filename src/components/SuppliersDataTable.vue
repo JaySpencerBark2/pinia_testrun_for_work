@@ -53,7 +53,12 @@
 </template>
 <script>
 import { useSupplierStore } from "@/stores/suppliers";
+
 export default {
+    setup(){
+       const  storeSupplier = useSupplierStore();
+        return {storeSupplier}
+    },
   data: () => ({
     headers: [
       { title: "Name", value: "supName" },
@@ -65,7 +70,6 @@ export default {
       { title: "", value: "actions" },
     ],
     showDialogSup: false,
-    storeSupplier: useSupplierStore(),
     suppliers: {
       supName: null,
       supAddress: null,
